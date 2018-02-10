@@ -26,7 +26,7 @@ namespace AlmVR.Server
         {
             services.AddMvc();
 
-            return new MefServiceProvider();
+            return ServiceProviderFactory.GetServiceProvider(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
