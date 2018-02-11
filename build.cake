@@ -24,31 +24,10 @@ Task("Clean")
     CleanDirectory(buildDir);
 });
 
-Task("Restore-NuGet-Packages")
+Task("Build")
     .IsDependentOn("Clean")
     .Does(() =>
-{
-    NuGetRestore("./src/AlmVR.Server/AlmVR.Server.sln");
-});
-
-Task("Build")
-    .IsDependentOn("Restore-NuGet-Packages")
-    .Does(() =>
-{
-/*
-    if(IsRunningOnWindows())
-    {
-      // Use MSBuild
-      MSBuild("./src/AlmVR.Server/AlmVR.Server.sln", settings =>
-        settings.SetConfiguration(configuration));
-    }
-    else
-    {
-      // Use XBuild
-      XBuild("./src/AlmVR.Server/AlmVR.Server.sln", settings =>
-        settings.SetConfiguration(configuration));
-    }*/
-	
+{	
 	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln");
 });
 
