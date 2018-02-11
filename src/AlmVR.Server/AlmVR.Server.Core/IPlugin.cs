@@ -7,6 +7,6 @@ namespace AlmVR.Server.Core
 {
     public interface IPlugin
     {
-        void Initialize(ContainerBuilder bulider);
+        void Initialize(ContainerBuilder builder);
     }
 }

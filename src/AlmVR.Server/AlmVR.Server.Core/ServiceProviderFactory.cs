@@ -13,14 +13,14 @@ namespace AlmVR.Server.Core
 {
     public class ServiceProviderFactory
     {
-        private static bool _containerCreated;
+        private static bool containerCreated;
 
         public static IServiceProvider GetServiceProvider(IServiceCollection services)
         {
-            if (_containerCreated)
+            if (containerCreated)
                 throw new NotSupportedException("GetServiceProvider can only be called once.");
 
-            _containerCreated = true;
+            containerCreated = true;
 
             var builder = new ContainerBuilder();
             builder.Populate(services);

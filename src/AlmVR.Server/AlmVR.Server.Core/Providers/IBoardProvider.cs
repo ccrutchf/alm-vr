@@ -2,5 +2,6 @@
 {
     public interface IBoardProvider
     {
+        string GetInfo();
     }
 }

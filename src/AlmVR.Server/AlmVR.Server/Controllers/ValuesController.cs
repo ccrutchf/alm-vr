@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AlmVR.Server.Core.Providers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlmVR.Server.Controllers
@@ -9,11 +10,18 @@ namespace AlmVR.Server.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private IBoardProvider boardProvider;
+
+        public ValuesController(IBoardProvider boardProvider)
+        {
+            this.boardProvider = boardProvider;
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2", boardProvider.GetInfo() };
         }
 
         // GET api/values/5
