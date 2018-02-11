@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Users\Chris\Repos\CSE199\alm-vr\src\AlmVR.Server\AlmVR.Server\bin\Debug\netcoreapp2.0\Plugins\</OutputPath>
+    <OutputPath>..\AlmVR.Server\bin\Debug\netcoreapp2.0\Plugins\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
