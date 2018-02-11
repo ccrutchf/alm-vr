@@ -7,6 +7,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\AlmVR.Server\bin\Debug\netcoreapp2.0\Plugins\</OutputPath>
   </PropertyGroup>
+  
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\AlmVR.Server\bin\Release\netcoreapp2.0\Plugins\</OutputPath>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AlmVR.Server.Core\AlmVR.Server.Core.csproj" />
