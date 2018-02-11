@@ -1,3 +1,5 @@
+#addin "Cake.Incubator"
+
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
@@ -33,6 +35,7 @@ Task("Build")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
 {
+/*
     if(IsRunningOnWindows())
     {
       // Use MSBuild
@@ -44,7 +47,9 @@ Task("Build")
       // Use XBuild
       XBuild("./src/AlmVR.Server/AlmVR.Server.sln", settings =>
         settings.SetConfiguration(configuration));
-    }
+    }*/
+	
+	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln");
 });
 
 //////////////////////////////////////////////////////////////////////
