@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Users\Chris\Repos\CSE199\alm-vr\src\AlmVR.Server\AlmVR.Server\bin\Debug\netcoreapp2.0\Plugins\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlmVR.Server.Core\AlmVR.Server.Core.csproj" />
+  </ItemGroup>
+
+</Project>
