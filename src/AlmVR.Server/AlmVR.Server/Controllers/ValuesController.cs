@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AlmVR.Server.Core.Providers;
+using AlmVR.Server.Hubs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace AlmVR.Server.Controllers
 {
@@ -11,16 +13,20 @@ namespace AlmVR.Server.Controllers
     public class ValuesController : Controller
     {
         private IBoardProvider boardProvider;
+        private IHubContext<BoardHub> boardHubContext;
 
-        public ValuesController(IBoardProvider boardProvider)
+        public ValuesController(IBoardProvider boardProvider, IHubContext<BoardHub> boardHubContext)
         {
             this.boardProvider = boardProvider;
+            this.boardHubContext = boardHubContext;
         }
 
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<string>> GetAsync()
         {
+            await boardHubContext.Clients.All.InvokeAsync("DoThingToClients");
+
             return new string[] { "value1", "value2", boardProvider.GetInfo() };
         }
 
