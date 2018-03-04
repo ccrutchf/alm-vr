@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AlmVR.Client;
 using AlmVR.Client.Core;
@@ -16,9 +17,12 @@ public class ServerCommunication : MonoBehaviour {
     private Text stdoutText;
     private InputField portInputFieldText;
     private StringBuilder stdoutBuilder = new StringBuilder();
+    private SynchronizationContext syncContext;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        syncContext = SynchronizationContext.Current;
+
         stdoutText = StdOut.GetComponent<Text>();
         portInputFieldText = PortInputField.GetComponent<InputField>();
     }
@@ -54,6 +58,6 @@ public class ServerCommunication : MonoBehaviour {
 
     private void BoardClient_ThingHappenedToMe(object sender, EventArgs e)
     {
-        AppendLine("stop");
+        syncContext.Send(x => AppendLine("stop"), null);
     }
 }
