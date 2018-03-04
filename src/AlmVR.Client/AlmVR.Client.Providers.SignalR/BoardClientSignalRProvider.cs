@@ -1,4 +1,5 @@
 ﻿using AlmVR.Client.Core;
+using AlmVR.Common.Models;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.AspNetCore.Sockets;
 using System;
@@ -37,9 +38,9 @@ namespace AlmVR.Client.Providers.SignalR
             await connection.DisposeAsync();
         }
 
-        public Task<string> DoThingToServerAsync()
+        public Task<BoardModel> GetBoardAsync()
         {
-            return connection.InvokeAsync<string>("DoThingToServer");
+            return connection.InvokeAsync<BoardModel>("GetBoard");
         }
     }
 }

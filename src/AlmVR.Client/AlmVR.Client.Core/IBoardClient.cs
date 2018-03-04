@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlmVR.Common.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,6 @@ namespace AlmVR.Client.Core
 
         Task ConnectAsync(string hostName, int port);
 
-        Task<string> DoThingToServerAsync();
+        Task<BoardModel> GetBoardAsync();
     }
 }

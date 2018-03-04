@@ -43,5 +43,11 @@
     <Compile Include="IBoardClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj">
+      <Project>{8f9d1aab-5abc-438a-b143-b1e80c117f57}</Project>
+      <Name>AlmVR.Common.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

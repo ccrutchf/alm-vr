@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client", "AlmVR.Client\AlmVR.Client.csproj", "{4FCFB33C-D922-4C31-8BD7-A78FB03268AC}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client.Demo", "AlmVR.Client.Demo\AlmVR.Client.Demo.csproj", "{0B3E8783-3D97-4082-B076-FE4CDF84B38C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client.Providers.SignalR", "AlmVR.Client.Providers.SignalR\AlmVR.Client.Providers.SignalR.csproj", "{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Common.Models", "..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj", "{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

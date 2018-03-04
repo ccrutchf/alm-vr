@@ -1,4 +1,5 @@
-﻿using AlmVR.Server.Core.Providers;
+﻿using AlmVR.Common.Models;
+using AlmVR.Server.Core.Providers;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace AlmVR.Server.Hubs
             this.boardProvider = boardProvider;
         }
 
-        public Task GetBoard()
+        public Task<BoardModel> GetBoard()
         {
             return boardProvider.GetBoardAsync();
         }

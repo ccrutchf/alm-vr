@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AlmVR.Server.Core.Models;
+using AlmVR.Common.Models;
 using AlmVR.Server.Core.Providers;
 using AlmVR.Server.Hubs;
 using Microsoft.AspNetCore.Mvc;

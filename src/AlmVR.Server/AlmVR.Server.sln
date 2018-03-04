@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Server.Core", "AlmVR.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Server.Providers.Trello", "AlmVR.Server.Providers.Trello\AlmVR.Server.Providers.Trello.csproj", "{F59EB3AB-4BA7-46D5-BF46-51AB3C22F990}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Server.Provider.FileSystem", "AlmVR.Server.Provider.FileSystem\AlmVR.Server.Provider.FileSystem.csproj", "{16114BDF-422B-4B25-A770-2EBF43AFC844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Server.Provider.FileSystem", "AlmVR.Server.Provider.FileSystem\AlmVR.Server.Provider.FileSystem.csproj", "{16114BDF-422B-4B25-A770-2EBF43AFC844}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Common.Models", "..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj", "{4021B633-1802-40D8-B89C-7EEECF047185}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{16114BDF-422B-4B25-A770-2EBF43AFC844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16114BDF-422B-4B25-A770-2EBF43AFC844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16114BDF-422B-4B25-A770-2EBF43AFC844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4021B633-1802-40D8-B89C-7EEECF047185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4021B633-1802-40D8-B89C-7EEECF047185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4021B633-1802-40D8-B89C-7EEECF047185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4021B633-1802-40D8-B89C-7EEECF047185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

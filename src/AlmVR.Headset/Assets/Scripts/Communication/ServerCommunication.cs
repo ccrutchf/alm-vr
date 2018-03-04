@@ -44,7 +44,7 @@ public class ServerCommunication : MonoBehaviour {
 
         var boardClient = ClientFactory.GetInstance<IBoardClient>();
         await boardClient.ConnectAsync(ipaddress, port);
-        AppendLine(await boardClient.DoThingToServerAsync());
+        AppendLine((await boardClient.GetBoardAsync()).ID);
 
         boardClient.ThingHappenedToMe += BoardClient_ThingHappenedToMe;
     }

@@ -1,4 +1,4 @@
-﻿using AlmVR.Server.Core.Models;
+﻿using AlmVR.Common.Models;
 using AlmVR.Server.Core.Providers;
 using AlmVR.Server.Providers.Trello.Models;
 using Newtonsoft.Json;

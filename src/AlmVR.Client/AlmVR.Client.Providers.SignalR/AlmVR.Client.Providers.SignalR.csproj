@@ -194,6 +194,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj">
+      <Project>{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}</Project>
+      <Name>AlmVR.Common.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AlmVR.Client.Core\AlmVR.Client.Core.csproj">
       <Project>{320f328d-7826-49b0-83d1-f61546b7546e}</Project>
       <Name>AlmVR.Client.Core</Name>

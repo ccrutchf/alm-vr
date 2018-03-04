@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AlmVR.Server.Core.Models
+namespace AlmVR.Common.Models
 {
     public class BoardModel
     {

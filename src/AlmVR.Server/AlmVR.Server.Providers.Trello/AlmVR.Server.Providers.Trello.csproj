@@ -17,6 +17,7 @@
     </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj" />
     <ProjectReference Include="..\AlmVR.Server.Core\AlmVR.Server.Core.csproj" />
   </ItemGroup>
 

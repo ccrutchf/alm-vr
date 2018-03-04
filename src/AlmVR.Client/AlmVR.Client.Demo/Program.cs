@@ -22,7 +22,7 @@ namespace AlmVR.Client.Demo
 
             var boardClient = ClientFactory.GetInstance<IBoardClient>();
             boardClient.ConnectAsync(ipaddress, port).Wait();
-            Console.WriteLine(boardClient.DoThingToServerAsync().Result);
+            Console.WriteLine(boardClient.GetBoardAsync().Result.ID);
 
             boardClient.ThingHappenedToMe += BoardClient_ThingHappenedToMe;
 
