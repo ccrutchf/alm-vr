@@ -28,7 +28,7 @@ namespace AlmVR.Server.Providers.Trello
             var boardID = config.BoardID;
             var oAuthToken = config.OAuthToken;
 
-            var url = $"https://trello.com/1/boards/{boardID}/lists?cards=all&fields=name&key={apiKey}&token={oAuthToken}";
+            var url = $"https://trello.com/1/boards/{boardID}/lists?cards=open&filter=open&fields=name&key={apiKey}&token={oAuthToken}";
 
             var httpClient = new HttpClient();
             string json = null;

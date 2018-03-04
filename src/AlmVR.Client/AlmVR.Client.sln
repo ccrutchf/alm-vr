@@ -11,9 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client.Demo", "AlmVR.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client.Providers.SignalR", "AlmVR.Client.Providers.SignalR\AlmVR.Client.Providers.SignalR.csproj", "{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Common.Models", "..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj", "{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AlmVR.Common.Models", "..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.shproj", "{04BB357C-92F3-40CC-B74A-09C49CF7B2DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Common.Models.Full", "..\AlmVR.Common.Models\AlmVR.Common.Models.Full\AlmVR.Common.Models.Full.csproj", "{84BFFB34-7C00-40C2-B843-37069732BF3A}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.projitems*{04bb357c-92f3-40cc-b74a-09c49cf7b2dd}*SharedItemsImports = 13
+		..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.projitems*{84bffb34-7c00-40c2-b843-37069732bf3a}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -35,10 +41,10 @@ Global
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F9D1AAB-5ABC-438A-B143-B1E80C117F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
