@@ -4,7 +4,9 @@ namespace AlmVR.Server.Core.Providers
 {
     public interface IConfigurationProvider
     {
-        Task<T> GetConfigurationAsync<T>();
-        Task SetConfigurationAsync<T>();
+        Task<T> GetConfigurationAsync<T>()
+            where T : class;
+        Task SetConfigurationAsync<T>()
+            where T : class;
     }
 }

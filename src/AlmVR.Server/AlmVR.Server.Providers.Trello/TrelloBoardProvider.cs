@@ -1,15 +1,29 @@
-﻿using AlmVR.Server.Core.Providers;
+﻿using AlmVR.Server.Core.Models;
+using AlmVR.Server.Core.Providers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AlmVR.Server.Providers.Trello
 {
     internal class TrelloBoardProvider : IBoardProvider
     {
-        public string GetInfo()
+        private IConfigurationProvider configurationProvider;
+
+        public TrelloBoardProvider(IConfigurationProvider configurationProvider)
         {
-            return "From Trello";
+            this.configurationProvider = configurationProvider;
+        }
+
+        public async Task<BoardModel> GetBoardAsync()
+        {
+            var config = await configurationProvider.GetConfigurationAsync<TrelloConfiguration>();
+
+            return new BoardModel
+            {
+                ID = config.ApiKey
+            };
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AlmVR.Server.Core.Models;
 using AlmVR.Server.Core.Providers;
 using AlmVR.Server.Hubs;
 using Microsoft.AspNetCore.Mvc;
@@ -23,11 +24,11 @@ namespace AlmVR.Server.Controllers
 
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<string>> GetAsync()
+        public Task<BoardModel> GetAsync()
         {
-            await boardHubContext.Clients.All.InvokeAsync("DoThingToClients");
+            //await boardHubContext.Clients.All.InvokeAsync("DoThingToClients");
 
-            return new string[] { "value1", "value2", boardProvider.GetInfo() };
+            return boardProvider.GetBoardAsync();
         }
 
         // GET api/values/5

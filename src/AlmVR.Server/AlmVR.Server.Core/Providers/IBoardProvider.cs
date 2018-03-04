@@ -1,7 +1,10 @@
-﻿namespace AlmVR.Server.Core.Providers
+﻿using AlmVR.Server.Core.Models;
+using System.Threading.Tasks;
+
+namespace AlmVR.Server.Core.Providers
 {
     public interface IBoardProvider
     {
-        string GetInfo();
+        Task<BoardModel> GetBoardAsync();
     }
 }
