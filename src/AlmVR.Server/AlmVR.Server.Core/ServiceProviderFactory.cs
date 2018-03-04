@@ -34,9 +34,9 @@ namespace AlmVR.Server.Core
         private static void LoadPlugins(ContainerBuilder builder)
         {
             var exeLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            var pluginLocaiton = Path.Combine(exeLocation, "Plugins");
+            var pluginLocation = Path.Combine(exeLocation, "Plugins");
 
-            var plugins = Directory.GetFiles(pluginLocaiton, "*.dll", SearchOption.AllDirectories)
+            var plugins = Directory.GetFiles(pluginLocation, "*.dll", SearchOption.AllDirectories)
               .Select(path => AssemblyLoadContext.Default.LoadFromAssemblyPath(path))
               .Where(x => x != null)
               .Select(x => x.GetTypes())

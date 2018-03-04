@@ -40,7 +40,7 @@ public class ServerCommunication : MonoBehaviour {
         string portString = portInputFieldText.text;
         int port = int.Parse(portString);
 
-        AppendLine($"Connecting to ws://{ipaddress}:{port}...");
+        AppendLine($"Connecting to http://{ipaddress}:{port}...");
 
         var boardClient = ClientFactory.GetInstance<IBoardClient>();
         await boardClient.ConnectAsync(ipaddress, port);

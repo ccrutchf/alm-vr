@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using AlmVR.Server.Core.Providers;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,6 +10,13 @@ namespace AlmVR.Server.Hubs
 {
     public class BoardHub : Hub
     {
+        private IBoardProvider boardProvider;
+
+        public BoardHub(IBoardProvider boardProvider)
+        {
+            this.boardProvider = boardProvider;
+        }
+
         public string DoThingToServer()
         {
             Debug.WriteLine("ouch");

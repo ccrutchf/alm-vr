@@ -18,7 +18,7 @@ namespace AlmVR.Client.Demo
             string portString = Console.ReadLine();
             int port = int.Parse(portString);
 
-            Console.WriteLine($"Connecting to ws://{ipaddress}:{port}...");
+            Console.WriteLine($"Connecting to http://{ipaddress}:{port}...");
 
             var boardClient = ClientFactory.GetInstance<IBoardClient>();
             boardClient.ConnectAsync(ipaddress, port).Wait();
