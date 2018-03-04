@@ -17,11 +17,9 @@ namespace AlmVR.Server.Hubs
             this.boardProvider = boardProvider;
         }
 
-        public string DoThingToServer()
+        public Task GetBoard()
         {
-            Debug.WriteLine("ouch");
-
-            return "Why'd you hurt me?";
+            return boardProvider.GetBoardAsync();
         }
     }
 }
