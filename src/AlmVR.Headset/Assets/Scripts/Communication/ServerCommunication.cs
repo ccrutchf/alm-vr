@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using AlmVR.Client;
 using AlmVR.Client.Core;
 using UnityEngine;
@@ -27,7 +28,7 @@ public class ServerCommunication : MonoBehaviour {
 		
 	}
 
-    public void Connect()
+    public async void Connect()
     {
         AppendLine("Connecting...");
         string ipaddress = "localhost";
@@ -38,8 +39,8 @@ public class ServerCommunication : MonoBehaviour {
         AppendLine($"Connecting to ws://{ipaddress}:{port}...");
 
         var boardClient = ClientFactory.GetInstance<IBoardClient>();
-        boardClient.ConnectAsync(ipaddress, port).Wait();
-        AppendLine(boardClient.DoThingToServerAsync().Result);
+        await boardClient.ConnectAsync(ipaddress, port);
+        AppendLine(await boardClient.DoThingToServerAsync());
 
         boardClient.ThingHappenedToMe += BoardClient_ThingHappenedToMe;
     }
