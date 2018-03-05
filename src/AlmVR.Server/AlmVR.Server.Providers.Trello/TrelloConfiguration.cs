@@ -8,6 +8,6 @@ namespace AlmVR.Server.Providers.Trello
     {
         public string ApiKey { get; set; }
         public string BoardID { get; set; }
-        public string OAuthToken { get; set; }
+        public string Token { get; set; }
     }
 }

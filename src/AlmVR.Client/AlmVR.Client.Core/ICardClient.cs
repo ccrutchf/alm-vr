@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace AlmVR.Client.Core
 {
-    public interface IBoardClient : IClient
+    public interface ICardClient : IClient
     {
-        event EventHandler ThingHappenedToMe;
-
-        Task<BoardModel> GetBoardAsync();
+        Task<CardModel> GetCardAsync(string id);
     }
 }

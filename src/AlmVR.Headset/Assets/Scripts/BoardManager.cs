@@ -8,21 +8,35 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour {
     public GameObject CardPrefab;
 
+    private IBoardClient boardClient;
+    private ICardClient cardClient;
+
     public string HostName;
     public int Port;
     
 	// Use this for initialization
 	async void Start () {
-        var boardClient = ClientFactory.GetInstance<IBoardClient>();
+        boardClient = ClientFactory.GetInstance<IBoardClient>();
+        cardClient = ClientFactory.GetInstance<ICardClient>();
+
         await boardClient.ConnectAsync(HostName, Port);
+        await cardClient.ConnectAsync(HostName, Port);
+
         var board = await boardClient.GetBoardAsync();
 
-        var cards = (from c in board.SwimLanes.SelectMany(s => s.Cards)
-                     select GameObject.Instantiate(CardPrefab)).ToArray();
+        var cards = board.SwimLanes.SelectMany(s => s.Cards)
+                        .ToDictionary(s => s.ID, s => GameObject.Instantiate(CardPrefab));
 
-        foreach (var card in cards)
+        foreach (var key in cards.Keys)
         {
-            card.transform.position = new Vector3(Random.value * 10.0f - 5, Random.value * 500.0f, Random.value * 10.0f - 5);
+            var cardScript = cards[key].GetComponent<Card>();
+            cardScript.ID = key;
+            cardScript.CardClient = cardClient;
+
+            cards[key].transform.parent = transform;
+
+            // We do not need to wait for this to finish.
+            var task = cardScript.InitializeAsync();
         }
 	}
 	
@@ -30,4 +44,9 @@ public class BoardManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnDestroy() {
+        boardClient.Dispose();
+        cardClient.Dispose();
+    }
 }

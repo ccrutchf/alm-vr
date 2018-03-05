@@ -44,6 +44,7 @@ namespace AlmVR.Server
             app.UseSignalR(routes =>
             {
                 routes.MapHub<BoardHub>("board");
+                routes.MapHub<CardHub>("card");
             });
         }
     }

@@ -18,6 +18,7 @@ namespace AlmVR.Client
             var builder = new ContainerBuilder();
 
             builder.RegisterType<BoardClientSignalRProvider>().As<IBoardClient>();
+            builder.RegisterType<CardClientSignalRProvider>().As<ICardClient>();
 
             container = builder.Build();
         }

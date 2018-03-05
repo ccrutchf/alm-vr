@@ -10,37 +10,25 @@ using System.Threading.Tasks;
 
 namespace AlmVR.Client.Providers.SignalR
 {
-    public class BoardClientSignalRProvider : IBoardClient
+    public class BoardClientSignalRProvider : ClientBase, IBoardClient
     {
         public event EventHandler ThingHappenedToMe;
 
-        private HubConnection connection;
+        public BoardClientSignalRProvider()
+            : base("board") { }
 
-        public Task ConnectAsync(string hostName, int port)
+        protected override void OnConnectionCreated()
         {
-            connection = new HubConnectionBuilder()
-                .WithUrl($"http://{hostName}:{port}/board")
-                .WithTransport(TransportType.LongPolling) // Hack because Unity does not like Websockets.
-                .WithConsoleLogger()
-                .Build();
-
-            connection.On("DoThingToClients", () =>
+            Connection.On("DoThingToClients", () =>
             {
                 Console.WriteLine("raising event");
                 ThingHappenedToMe?.Invoke(this, new EventArgs());
             });
-
-            return connection.StartAsync();
-        }
-
-        public async void Dispose()
-        {
-            await connection.DisposeAsync();
         }
 
         public Task<BoardModel> GetBoardAsync()
         {
-            return connection.InvokeAsync<BoardModel>("GetBoard");
+            return Connection.InvokeAsync<BoardModel>("GetBoard");
         }
     }
 }

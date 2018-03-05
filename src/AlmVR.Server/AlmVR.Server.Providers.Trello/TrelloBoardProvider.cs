@@ -12,27 +12,22 @@ using System.Threading.Tasks;
 
 namespace AlmVR.Server.Providers.Trello
 {
-    internal class TrelloBoardProvider : IBoardProvider
+    internal class TrelloBoardProvider : TrelloProviderBase, IBoardProvider
     {
-        private IConfigurationProvider configurationProvider;
-
         public TrelloBoardProvider(IConfigurationProvider configurationProvider)
-        {
-            this.configurationProvider = configurationProvider;
-        }
+            : base(configurationProvider, "boards") { }
 
         public async Task<BoardModel> GetBoardAsync()
         {
-            var config = await configurationProvider.GetConfigurationAsync<TrelloConfiguration>();
-            var apiKey = config.ApiKey;
+            await InitializeAsync();
+
+            var config = await ConfigurationProvider.GetConfigurationAsync<TrelloConfiguration>();
             var boardID = config.BoardID;
-            var oAuthToken = config.OAuthToken;
 
-            var url = $"https://trello.com/1/boards/{boardID}/lists?cards=open&filter=open&fields=name&key={apiKey}&token={oAuthToken}";
+            var url = $"{BaseUrl}/{boardID}/lists?cards=open&filter=open&fields=name&{KeyAndToken}";
 
-            var httpClient = new HttpClient();
             string json = null;
-            using (var result = await httpClient.GetAsync(url))
+            using (var result = await HttpClient.GetAsync(url))
             {
                 result.EnsureSuccessStatusCode();
 

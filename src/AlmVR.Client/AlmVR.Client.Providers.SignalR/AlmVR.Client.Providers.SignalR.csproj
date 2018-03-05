@@ -191,6 +191,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardClientSignalRProvider.cs" />
+    <Compile Include="CardClientSignalRProvider.cs" />
+    <Compile Include="ClientBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

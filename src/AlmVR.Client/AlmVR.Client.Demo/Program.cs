@@ -22,7 +22,12 @@ namespace AlmVR.Client.Demo
 
             var boardClient = ClientFactory.GetInstance<IBoardClient>();
             boardClient.ConnectAsync(ipaddress, port).Wait();
-            Console.WriteLine(boardClient.GetBoardAsync().Result.ID);
+            var board = boardClient.GetBoardAsync().Result;
+            Console.WriteLine(board.ID);
+
+            var cardClient = ClientFactory.GetInstance<ICardClient>();
+            cardClient.ConnectAsync(ipaddress, port).Wait();
+            Console.WriteLine(cardClient.GetCardAsync(board.SwimLanes.First().Cards.First().ID).Result.ID);
 
             boardClient.ThingHappenedToMe += BoardClient_ThingHappenedToMe;
 
