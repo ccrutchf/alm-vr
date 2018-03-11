@@ -7,8 +7,8 @@
     <ProjectGuid>{84BFFB34-7C00-40C2-B843-37069732BF3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AlmVR.Common.Models.Full</RootNamespace>
-    <AssemblyName>AlmVR.Common.Models.Full</AssemblyName>
+    <RootNamespace>AlmVR.Common.Models</RootNamespace>
+    <AssemblyName>AlmVR.Common.Models</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

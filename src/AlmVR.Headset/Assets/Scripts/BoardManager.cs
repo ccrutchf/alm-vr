@@ -35,10 +35,12 @@ public class BoardManager : MonoBehaviour {
 
             cards[key].transform.parent = transform;
 
+#pragma warning disable
             // We do not need to wait for this to finish.
             var task = cardScript.InitializeAsync();
+#pragma warning restore
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
