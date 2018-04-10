@@ -420,8 +420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CardPrefab: {fileID: 1176178219055488, guid: f0f92b65770110d44af89ef6d02727d8, type: 2}
-  HostName: localhost
-  Port: 53575
+  HostName: 159.65.109.28
+  Port: 9090
 --- !u!1001 &1788887878
 Prefab:
   m_ObjectHideFlags: 0
