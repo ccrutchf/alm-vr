@@ -14,7 +14,12 @@ public class NetworkManager : PunBehaviour {
     public GameObject LocalAvatar;
 
 	void Start () {
-        PhotonNetwork.ConnectUsingSettings("v4.2");
+        PhotonNetwork.ConnectUsingSettings("1.0");
+    }
+
+    public void OnDestroy()
+    {
+        PhotonNetwork.Disconnect();
     }
 
     public override void OnJoinedLobby()
