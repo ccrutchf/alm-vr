@@ -7,6 +7,8 @@ public class NetworkManager : PunBehaviour {
 
     public enum EventCode : byte
     {
+        Unknown,
+
         InstantiateVRAvatar
     }
 

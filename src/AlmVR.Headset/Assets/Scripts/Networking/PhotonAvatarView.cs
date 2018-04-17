@@ -9,7 +9,7 @@ public class PhotonAvatarView : MonoBehaviour {
     private OvrAvatar ovrAvatar;
     private OvrAvatarRemoteDriver remoteDriver;
 
-    private List<byte[]> packetData;
+    private List<byte[]> packetData = new List<byte[]>();
     private int localSequence;
 
     public void Awake()
