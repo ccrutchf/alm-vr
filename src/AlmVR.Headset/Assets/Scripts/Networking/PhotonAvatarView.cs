@@ -10,13 +10,13 @@ public class PhotonAvatarView : PunBehaviour {
     private OvrAvatar ovrAvatar;
     private OvrAvatarRemoteDriver remoteDriver;
 
-    private List<byte[]> packetData = new List<byte[]>();
+    private List<byte[]> packetData;
     private int localSequence;
 
     public void Awake()
     {
         photonView = GetComponent<PhotonView>();
-        if (photonView.isMine)
+        if (name == "LocalAvatar")
         {
             ovrAvatar = GetComponent<OvrAvatar>();
 
@@ -30,7 +30,7 @@ public class PhotonAvatarView : PunBehaviour {
 
     public void OnEnable()
     {
-        if (photonView.isMine)
+        if (name == "LocalAvatar")
         {
             ovrAvatar.RecordPackets = true;
             ovrAvatar.PacketRecorded += OnLocalAvatarPacketRecorded;
@@ -39,7 +39,7 @@ public class PhotonAvatarView : PunBehaviour {
 
     public void OnDisable()
     {
-        if (photonView.isMine && ovrAvatar != null)
+        if (name == "LocalAvatar" && ovrAvatar != null)
         {
             ovrAvatar.RecordPackets = false;
             ovrAvatar.PacketRecorded -= OnLocalAvatarPacketRecorded;
