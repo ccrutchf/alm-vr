@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class PhotonAvatarView : MonoBehaviour {
+public class PhotonAvatarView : PunBehaviour {
 
     private PhotonView photonView;
     private OvrAvatar ovrAvatar;
