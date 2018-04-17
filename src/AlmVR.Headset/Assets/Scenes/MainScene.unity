@@ -393,6 +393,10 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &686014946 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158226, guid: 25af96ba356b27346a1c9f0e7c98e6c3, type: 2}
+  m_PrefabInternal: {fileID: 118609411}
 --- !u!4 &711825453 stripped
 Transform:
   m_PrefabParentObject: {fileID: 462066, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
@@ -438,7 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomName: UCSD
-  LocalAvatar: {fileID: 0}
+  LocalAvatar: {fileID: 686014946}
 --- !u!1 &1432588067
 GameObject:
   m_ObjectHideFlags: 0
