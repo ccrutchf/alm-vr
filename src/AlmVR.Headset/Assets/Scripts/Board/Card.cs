@@ -14,7 +14,7 @@ public class Card : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        transform.position = new Vector3(Random.value * 10.0f - 5, 30 + Random.value * 10.0f, Random.value * 10.0f - 5);
+        transform.position = new Vector3(Random.value * 10.0f - 5, 50 + Random.value * 10.0f, Random.value * 10.0f - 5);
     }
 	
 	// Update is called once per frame
