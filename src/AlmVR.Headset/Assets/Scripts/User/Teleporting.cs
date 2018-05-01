@@ -31,10 +31,10 @@ public class Teleporting : MonoBehaviour {
             var rTouchWorldForward = transform.TransformDirection(rTouchLocalForward);
 
             var ray = new Ray(rTouchWorldPosition, rTouchWorldForward);
-            float distance = 0;
-            if (Island.GetComponent<Collider>().bounds.IntersectRay(ray, out distance))
+            RaycastHit hit;
+            if (Island.GetComponent<Collider>().Raycast(ray, out hit, 100.0f))
             {
-                currentTargetPosition = ray.GetPoint(distance);
+                currentTargetPosition = hit.point;
 
                 lineRender.SetPositions(new Vector3[]
                 {
