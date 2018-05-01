@@ -89,10 +89,13 @@ public class NetworkManager : PunBehaviour {
             }
         }
 
-        NetworkEventReceived?.Invoke(this, new NetworkEventReceivedEventArgs
+        if (PhotonNetwork.player.ID != senderid)
         {
-            Content = content,
-            EventCode = @event
-        });
+            NetworkEventReceived?.Invoke(this, new NetworkEventReceivedEventArgs
+            {
+                Content = content,
+                EventCode = @event
+            });
+        }
     }
 }
