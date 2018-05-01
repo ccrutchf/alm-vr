@@ -78,6 +78,8 @@ public class Teleporting : MonoBehaviour {
             var direction = Mathf.Abs(secondaryThumbstick.x) / secondaryThumbstick.x;
             eulerAngles.y += direction * Mathf.Min(Mathf.Pow(RotateExponent, Mathf.Abs(secondaryThumbstick.x)), MaxRotateSpeed);
             transform.eulerAngles = eulerAngles;
+
+            networkManager.RaiseEvent(NetworkManager.EventCode.PlayerRotationChanged, eulerAngles.y);
         }
     }
 }

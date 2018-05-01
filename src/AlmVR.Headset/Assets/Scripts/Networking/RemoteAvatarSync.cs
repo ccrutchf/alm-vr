@@ -23,6 +23,11 @@ public class RemoteAvatarSync : MonoBehaviour {
             case NetworkManager.EventCode.PlayerPositionChanged:
                 transform.position = (Vector3)e.Content;
                 break;
+            case NetworkManager.EventCode.PlayerRotationChanged:
+                var eulerAngles = transform.rotation.eulerAngles;
+                eulerAngles.y += (float)e.Content;
+                transform.eulerAngles = eulerAngles;
+                break;
         }
     }
 }

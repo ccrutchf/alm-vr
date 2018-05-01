@@ -11,7 +11,8 @@ public class NetworkManager : PunBehaviour {
         Unknown,
 
         InstantiateVRAvatar,
-        PlayerPositionChanged
+        PlayerPositionChanged,
+        PlayerRotationChanged
     }
 
     public event EventHandler<NetworkEventReceivedEventArgs> NetworkEventReceived;
