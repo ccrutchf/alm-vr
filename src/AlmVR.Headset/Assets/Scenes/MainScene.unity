@@ -990,6 +990,7 @@ MonoBehaviour:
   RotateThreshold: 0.4
   RotateExponent: 1.25
   MaxRotateSpeed: 1.25
+  NetworkManagerObject: {fileID: 1112224154}
 --- !u!1001 &1881261516
 Prefab:
   m_ObjectHideFlags: 0

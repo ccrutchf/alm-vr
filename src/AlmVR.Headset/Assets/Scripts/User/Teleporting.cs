@@ -7,6 +7,7 @@ public class Teleporting : MonoBehaviour {
     private bool wasStickHeldLastFrame;
     private Vector3 currentTargetPosition;
     private Vector2 currentStickPosition;
+    private NetworkManager networkManager;
 
     public GameObject Island;
     public float TeleportThreshold = 0.5f;
@@ -15,10 +16,11 @@ public class Teleporting : MonoBehaviour {
     public float RotateExponent = 1.5f;
     public float MaxRotateSpeed = 1.25f;
 
-    public NetworkManager NetworkManager;
+    public GameObject NetworkManagerObject;
 
 	// Use this for initialization
 	void Start () {
+        networkManager = NetworkManagerObject.GetComponent<NetworkManager>();
 	}
 
     // Update is called once per frame
@@ -64,7 +66,7 @@ public class Teleporting : MonoBehaviour {
             if (wasStickHeldLastFrame && secondaryThumbstick.magnitude < NoHoldThreshold)
             {
                 transform.position = currentTargetPosition + new Vector3(0, 1.5f, 0);
-                NetworkManager.RaiseEvent(NetworkManager.EventCode.PlayerPositionChanged, transform.position);
+                networkManager.RaiseEvent(NetworkManager.EventCode.PlayerPositionChanged, transform.position);
             }
 
             wasStickHeldLastFrame = false;
