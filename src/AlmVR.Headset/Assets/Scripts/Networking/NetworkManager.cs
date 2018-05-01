@@ -1,4 +1,5 @@
 ﻿using Photon;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,11 @@ public class NetworkManager : PunBehaviour {
     {
         Unknown,
 
-        InstantiateVRAvatar
+        InstantiateVRAvatar,
+        PlayerPositionChanged
     }
+
+    public event EventHandler<NetworkEventReceivedEventArgs> NetworkEventReceived;
 
     public string RoomName;
     public GameObject LocalAvatar;
@@ -38,7 +42,7 @@ public class NetworkManager : PunBehaviour {
     {
         int viewId = PhotonNetwork.AllocateViewID();
 
-        PhotonNetwork.RaiseEvent((int)EventCode.InstantiateVRAvatar, viewId, true, new RaiseEventOptions() { CachingOption = EventCaching.AddToRoomCache, Receivers = ReceiverGroup.All });
+        RaiseEvent(EventCode.InstantiateVRAvatar, viewId);
     }
 
     public void OnEnable()
@@ -49,6 +53,11 @@ public class NetworkManager : PunBehaviour {
     public void OnDisable()
     {
         PhotonNetwork.OnEventCall -= OnEvent;
+    }
+
+    public bool RaiseEvent(EventCode eventCode, object eventContent)
+    {
+        return PhotonNetwork.RaiseEvent((byte)eventCode, eventContent, true, new RaiseEventOptions() { CachingOption = EventCaching.AddToRoomCache, Receivers = ReceiverGroup.All });
     }
 
     private void OnEvent(byte eventcode, object content, int senderid)
@@ -66,6 +75,7 @@ public class NetworkManager : PunBehaviour {
             else
             {
                 go = Instantiate(Resources.Load("RemoteAvatar")) as GameObject;
+                go.GetComponent<RemoteAvatarSync>().NetworkManager = this;
             }
 
             if (go != null)
@@ -78,5 +88,11 @@ public class NetworkManager : PunBehaviour {
                 }
             }
         }
+
+        NetworkEventReceived?.Invoke(this, new NetworkEventReceivedEventArgs
+        {
+            Content = content,
+            EventCode = @event
+        });
     }
 }

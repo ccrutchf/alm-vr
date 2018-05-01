@@ -15,13 +15,14 @@ public class Teleporting : MonoBehaviour {
     public float RotateExponent = 1.5f;
     public float MaxRotateSpeed = 1.25f;
 
+    public NetworkManager NetworkManager;
+
 	// Use this for initialization
 	void Start () {
-		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         OVRInput.Update();
 
         var secondaryThumbstick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
@@ -61,7 +62,10 @@ public class Teleporting : MonoBehaviour {
             lineRender.enabled = false;
 
             if (wasStickHeldLastFrame && secondaryThumbstick.magnitude < NoHoldThreshold)
+            {
                 transform.position = currentTargetPosition + new Vector3(0, 1.5f, 0);
+                NetworkManager.RaiseEvent(NetworkManager.EventCode.PlayerPositionChanged, transform.position);
+            }
 
             wasStickHeldLastFrame = false;
         }
@@ -73,5 +77,5 @@ public class Teleporting : MonoBehaviour {
             eulerAngles.y += direction * Mathf.Min(Mathf.Pow(RotateExponent, Mathf.Abs(secondaryThumbstick.x)), MaxRotateSpeed);
             transform.eulerAngles = eulerAngles;
         }
-	}
+    }
 }

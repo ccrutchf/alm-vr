@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 11461908}
   - component: {fileID: 114970368615303202}
   - component: {fileID: 114712334824011518}
+  - component: {fileID: 114200649353689008}
   m_Layer: 0
   m_Name: RemoteAvatar
   m_TagString: Untagged
@@ -1563,6 +1564,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7a6650b6cb46545967d3b380b7396c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114200649353689008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f9f3c51cc3aa94eaeb68dfcbbae994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkManager: {fileID: 0}
 --- !u!114 &114712334824011518
 MonoBehaviour:
   m_ObjectHideFlags: 1
