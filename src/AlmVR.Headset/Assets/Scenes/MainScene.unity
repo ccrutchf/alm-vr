@@ -128,7 +128,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
-  m_CookingOptions: -1
+  m_CookingOptions: -2
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 4e619ecd7abac3848bcb29369d97f7be, type: 3}
 --- !u!1 &72981985
@@ -896,7 +896,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9c3b89c1de120994eaa4ac091a13f47f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -985,6 +985,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Island: {fileID: 72269694}
+  TeleportThreshold: 0.5
+  NoHoldThreshold: 0.5
+  RotateThreshold: 0.4
+  RotateExponent: 1.25
+  MaxRotateSpeed: 1.25
 --- !u!1001 &1881261516
 Prefab:
   m_ObjectHideFlags: 0
