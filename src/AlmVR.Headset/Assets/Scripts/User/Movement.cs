@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Teleporting : MonoBehaviour {
+public class Movement : MonoBehaviour {
 
     private const string TELEPORT_CAPABLE_TAG = "TeleportReceiver";
 
@@ -30,8 +30,15 @@ public class Teleporting : MonoBehaviour {
         OVRInput.Update();
 
         var secondaryThumbstick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
+
+        Teleport(secondaryThumbstick);
+        Rotate(secondaryThumbstick);
+    }
+
+    private void Teleport(Vector2 thumbstick)
+    {
         var lineRender = GetComponent<LineRenderer>();
-        if (secondaryThumbstick.y > TeleportThreshold)
+        if (thumbstick.y > TeleportThreshold)
         {
             lineRender.enabled = true;
 
@@ -46,7 +53,7 @@ public class Teleporting : MonoBehaviour {
             if (GameObject.FindGameObjectsWithTag(TELEPORT_CAPABLE_TAG).Any(x => x.GetComponent<Collider>().Raycast(ray, out hit, 100.0f)))
             {
                 currentTargetPosition = hit.point;
-                currentStickPosition = secondaryThumbstick;
+                currentStickPosition = thumbstick;
 
                 lineRender.SetPositions(new Vector3[]
                 {
@@ -65,7 +72,7 @@ public class Teleporting : MonoBehaviour {
         {
             lineRender.enabled = false;
 
-            if (wasStickHeldLastFrame && secondaryThumbstick.magnitude < NoHoldThreshold)
+            if (wasStickHeldLastFrame && thumbstick.magnitude < NoHoldThreshold)
             {
                 transform.position = currentTargetPosition + new Vector3(0, 1.5f, 0);
                 networkManager.RaiseEvent(NetworkManager.EventCode.PlayerPositionChanged, transform.position);
@@ -73,12 +80,15 @@ public class Teleporting : MonoBehaviour {
 
             wasStickHeldLastFrame = false;
         }
+    }
 
-        if (Mathf.Abs(secondaryThumbstick.x) > RotateThreshold)
+    private void Rotate(Vector2 thumbstick)
+    {
+        if (Mathf.Abs(thumbstick.x) > RotateThreshold)
         {
             var eulerAngles = transform.rotation.eulerAngles;
-            var direction = Mathf.Abs(secondaryThumbstick.x) / secondaryThumbstick.x;
-            eulerAngles.y += direction * Mathf.Min(Mathf.Pow(RotateExponent, Mathf.Abs(secondaryThumbstick.x)), MaxRotateSpeed);
+            var direction = Mathf.Abs(thumbstick.x) / thumbstick.x;
+            eulerAngles.y += direction * Mathf.Min(Mathf.Pow(RotateExponent, Mathf.Abs(thumbstick.x)), MaxRotateSpeed);
             transform.eulerAngles = eulerAngles;
 
             networkManager.RaiseEvent(NetworkManager.EventCode.PlayerRotationChanged, eulerAngles.y);
