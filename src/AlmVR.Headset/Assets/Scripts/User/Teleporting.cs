@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Teleporting : MonoBehaviour {
+
+    private const string TELEPORT_CAPABLE_TAG = "TeleportReceiver";
 
     private bool wasStickHeldLastFrame;
     private Vector3 currentTargetPosition;
     private Vector2 currentStickPosition;
     private NetworkManager networkManager;
 
-    public GameObject Island;
     public float TeleportThreshold = 0.5f;
     public float NoHoldThreshold = 0.5f;
     public float RotateThreshold = 0.4f;
@@ -40,8 +42,8 @@ public class Teleporting : MonoBehaviour {
             var rTouchWorldForward = transform.TransformDirection(rTouchLocalForward);
 
             var ray = new Ray(rTouchWorldPosition, rTouchWorldForward);
-            RaycastHit hit;
-            if (Island.GetComponent<Collider>().Raycast(ray, out hit, 100.0f))
+            RaycastHit hit = default(RaycastHit);
+            if (GameObject.FindGameObjectsWithTag(TELEPORT_CAPABLE_TAG).Any(x => x.GetComponent<Collider>().Raycast(ray, out hit, 100.0f)))
             {
                 currentTargetPosition = hit.point;
                 currentStickPosition = secondaryThumbstick;
