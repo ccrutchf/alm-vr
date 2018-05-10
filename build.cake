@@ -28,7 +28,17 @@ Task("Build")
     .IsDependentOn("Clean")
     .Does(() =>
 {	
-	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln");
+	var dotNetCoreSettings = new DotNetCoreBuildSettings
+	{
+		Configuration = "Release"
+	};
+
+	// Build the client.
+	MSBuild("./src/AlmVR.Client/AlmVR.Client.sln", settings =>
+        settings.SetConfiguration(configuration));
+		
+	// Build the server.
+	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln", dotNetCoreSettings);
 });
 
 //////////////////////////////////////////////////////////////////////
