@@ -63,7 +63,7 @@ Task("Build-Unity")
 	var projectPath = System.IO.Path.GetFullPath("./src/AlmVR.Headset");
 	
 	// The location we want the build application to go
-	var outputPath = System.IO.Path.Combine(projectPath, "_build", "x64", "alm-vr.exe");
+	var outputPath = System.IO.Path.Combine(projectPath, "Build", "x64", "alm-vr.exe");
 	
 	// Create our build options.
 	var options = new Unity3DBuildOptions()
