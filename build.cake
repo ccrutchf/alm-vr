@@ -1,4 +1,5 @@
 #addin "Cake.Incubator"
+#addin nuget:?package=Cake.Unity3D
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -51,7 +52,38 @@ Task("Build-Client")
         settings.SetConfiguration(configuration));
 });
 
-Task("Build-Unity");
+Task("Build-Unity")
+	.Does(() =>
+{
+	// Presuming the build.cake file is within the Unity3D project folder.
+	var projectPath = System.IO.Path.GetFullPath("./src/AlmVR.Headset");
+	
+	// The location we want the build application to go
+	var outputPath = System.IO.Path.Combine(projectPath, "_build", "x64", "alm-vr.exe");
+	
+	// Get the absolute path to the 2018.1.0f1 Unity3D editor.
+	string unityEditorLocation;
+	/*if (!TryGetUnityInstall("Unity 2018.1.0f1 (64-bit)", out unityEditorLocation)) 
+	{
+		Error("Failed to find 'Unity 2018.1.0f1 (64-bit)' install location");
+		return;
+	}*/
+	
+	unityEditorLocation = @"C:\Users\ccrutchf\Desktop\2018.1.0b13\Editor\Unity.exe";
+	
+	// Create our build options.
+	var options = new Unity3DBuildOptions()
+	{
+		Platform = Unity3DBuildPlatform.StandaloneWindows64,
+		OutputPath = outputPath,
+		UnityEditorLocation = unityEditorLocation,
+		ForceScriptInstall = true,
+		BuildVersion = "1.0.0"
+	};
+	
+	// Perform the Unity3d build.
+	BuildUnity3DProject(projectPath, options);
+});
 
 Task("Build")
 	.IsDependentOn("Build-Server")
