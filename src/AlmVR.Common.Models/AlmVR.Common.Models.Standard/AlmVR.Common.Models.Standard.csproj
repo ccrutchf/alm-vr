@@ -8,4 +8,8 @@
 
   <Import Project="..\AlmVR.Common.Models\AlmVR.Common.Models.projitems" Label="Shared" />
 
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="2.1.23" />
+  </ItemGroup>
+
 </Project>
