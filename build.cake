@@ -53,6 +53,7 @@ Task("Build-Client")
 });
 
 Task("Build-Unity")
+	.IsDependentOn("Build-Client")
 	.Does(() =>
 {
 	// Presuming the build.cake file is within the Unity3D project folder.
@@ -63,13 +64,11 @@ Task("Build-Unity")
 	
 	// Get the absolute path to the 2018.1.0f1 Unity3D editor.
 	string unityEditorLocation;
-	/*if (!TryGetUnityInstall("Unity 2018.1.0f1 (64-bit)", out unityEditorLocation)) 
+	if (!TryGetUnityInstall("Unity 2018.1.0f1 (64-bit)", out unityEditorLocation)) 
 	{
 		Error("Failed to find 'Unity 2018.1.0f1 (64-bit)' install location");
 		return;
-	}*/
-	
-	unityEditorLocation = @"C:\Users\ccrutchf\Desktop\2018.1.0b13\Editor\Unity.exe";
+	}
 	
 	// Create our build options.
 	var options = new Unity3DBuildOptions()
