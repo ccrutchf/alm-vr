@@ -1,6 +1,8 @@
 #addin "Cake.Incubator"
 #addin nuget:?package=Cake.Unity3D
 
+using System.IO;
+
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
@@ -63,12 +65,7 @@ Task("Build-Unity")
 	var outputPath = System.IO.Path.Combine(projectPath, "_build", "x64", "alm-vr.exe");
 	
 	// Get the absolute path to the 2018.1.0f1 Unity3D editor.
-	string unityEditorLocation;
-	if (!TryGetUnityInstall("Unity 2018.1.0f1 (64-bit)", out unityEditorLocation)) 
-	{
-		Error("Failed to find 'Unity 2018.1.0f1 (64-bit)' install location");
-		return;
-	}
+	string unityEditorLocation = @"C:\Program Files\Unity\Editor\Unity.exe";
 	
 	// Create our build options.
 	var options = new Unity3DBuildOptions()
