@@ -31,22 +31,32 @@ Task("Restore-NuGet-Packages")
     NuGetRestore("./src/AlmVR.Client/AlmVR.Client.sln");
 });
 
-Task("Build")
-    .IsDependentOn("Restore-NuGet-Packages")
-    .Does(() =>
-{	
+Task("Build-Server")
+	.Does(() =>
+{
 	var dotNetCoreSettings = new DotNetCoreBuildSettings
 	{
 		Configuration = "Release"
 	};
+	
+	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln", dotNetCoreSettings);
+});
 
+Task("Build-Client")
+    .IsDependentOn("Restore-NuGet-Packages")
+	.Does(() =>
+{
 	// Build the client.
 	MSBuild("./src/AlmVR.Client/AlmVR.Client.sln", settings =>
         settings.SetConfiguration(configuration));
-		
-	// Build the server.
-	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln", dotNetCoreSettings);
 });
+
+Task("Build-Unity");
+
+Task("Build")
+	.IsDependentOn("Build-Server")
+	.IsDependentOn("Build-Client")
+	.IsDependentOn("Build-Unity");
 
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
