@@ -24,8 +24,15 @@ Task("Clean")
     CleanDirectory(buildDir);
 });
 
-Task("Build")
+Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
+    .Does(() =>
+{
+    NuGetRestore("./src/AlmVR.Client/AlmVR.Client.sln");
+});
+
+Task("Build")
+    .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
 {	
 	var dotNetCoreSettings = new DotNetCoreBuildSettings
