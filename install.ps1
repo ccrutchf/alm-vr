@@ -4,4 +4,4 @@
 $versionInfo = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("C:\Program Files\Unity\Editor\Unity.exe")
 
 $versionInfo.FileVersionRaw
-$versionInfo.ProductVersionRaw
+$versionInfo.ProductVersion
