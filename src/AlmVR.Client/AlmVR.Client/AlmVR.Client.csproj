@@ -74,4 +74,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" ..\..\AlmVR.Headset\Assets\Libraries\</PostBuildEvent>
+  </PropertyGroup>
 </Project>

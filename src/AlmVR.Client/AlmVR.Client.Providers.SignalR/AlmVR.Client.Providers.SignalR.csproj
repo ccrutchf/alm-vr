@@ -222,6 +222,7 @@
   </Target>
   <Import Project="..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)*" ..\..\AlmVR.Headset\Assets\Libraries\</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
