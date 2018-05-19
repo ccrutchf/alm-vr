@@ -117,3 +117,5 @@ Thumbs.db
 
 # NUnit
 TestResult.xml
+
+[Bb]uild/
