@@ -1,5 +1,4 @@
 #addin "Cake.Incubator"
-#addin nuget:?package=Cake.Unity3D
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -58,27 +57,15 @@ Task("Build-Unity")
 	.Does(() =>
 {
 	var unityEditorLocation = EnvironmentVariable("UNITY_EDITOR_LOCATION") ?? @"C:\Program Files\Unity\Editor\Unity.exe";
-	
-	Information($"Unity Editor Location: {unityEditorLocation}");
-	
-	// Presuming the build.cake file is within the Unity3D project folder.
 	var projectPath = System.IO.Path.GetFullPath("./src/AlmVR.Headset");
-	
-	// The location we want the build application to go
 	var outputPath = System.IO.Path.Combine(projectPath, "Build", "x64", "alm-vr.exe");
 	
-	// Create our build options.
-	var options = new Unity3DBuildOptions()
-	{
-		Platform = Unity3DBuildPlatform.StandaloneWindows64,
-		OutputPath = outputPath,
-		UnityEditorLocation = unityEditorLocation,
-		ForceScriptInstall = true,
-		BuildVersion = "1.0.0"
-	};
+	Information($"Unity Editor Location: {unityEditorLocation}");
+	Information($"Project Path {projectPath}");
+	Information($"Output Path {outputPath}");
 	
-	// Perform the Unity3d build.
-	BuildUnity3DProject(projectPath, options);
+	//StartProcess(unityEditorLocation, 
+	//	$"-batchmode -quit -projectPath \"{ProjectPath}\" -executeMethod Cake.Unity3D.AutomatedBuild.Build --output-path=C:\projects\alm-vr\src\AlmVR.Headset\Build\x64\alm-vr.exe --platform=StandaloneWindows64 --version=1.0.0"
 });
 
 Task("Build")
