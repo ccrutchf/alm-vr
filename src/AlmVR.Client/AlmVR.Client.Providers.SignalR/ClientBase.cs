@@ -1,6 +1,8 @@
 ﻿using AlmVR.Client.Core;
+using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.AspNetCore.Sockets;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +24,11 @@ namespace AlmVR.Client.Providers.SignalR
         public Task ConnectAsync(string hostName, int port)
         {
             Connection = new HubConnectionBuilder()
-                .WithUrl($"http://{hostName}:{port}/{Path}")
-                .WithTransport(TransportType.LongPolling) // Hack because Unity does not like Websockets.
-                .WithConsoleLogger()
+                .WithUrl($"http://{hostName}:{port}/{Path}", HttpTransportType.LongPolling)
+                .ConfigureLogging(logging =>
+                {
+                    logging.AddConsole();
+                })
                 .Build();
 
             OnConnectionCreated();
