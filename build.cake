@@ -59,6 +59,8 @@ Task("Build-Unity")
 {
 	var unityEditorLocation = EnvironmentVariable("UNITY_EDITOR_LOCATION") ?? @"C:\Program Files\Unity\Editor\Unity.exe";
 	
+	Information($"Unity Editor Location: {unityEditorLocation}");
+	
 	// Presuming the build.cake file is within the Unity3D project folder.
 	var projectPath = System.IO.Path.GetFullPath("./src/AlmVR.Headset");
 	
