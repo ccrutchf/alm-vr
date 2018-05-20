@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client", "AlmVR.Clien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client.Core", "AlmVR.Client.Core\AlmVR.Client.Core.csproj", "{320F328D-7826-49B0-83D1-F61546B7546E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client.Demo", "AlmVR.Client.Demo\AlmVR.Client.Demo.csproj", "{0B3E8783-3D97-4082-B076-FE4CDF84B38C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Client.Providers.SignalR", "AlmVR.Client.Providers.SignalR\AlmVR.Client.Providers.SignalR.csproj", "{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AlmVR.Common.Models", "..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.shproj", "{04BB357C-92F3-40CC-B74A-09C49CF7B2DD}"
@@ -33,10 +31,6 @@ Global
 		{320F328D-7826-49B0-83D1-F61546B7546E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{320F328D-7826-49B0-83D1-F61546B7546E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{320F328D-7826-49B0-83D1-F61546B7546E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B3E8783-3D97-4082-B076-FE4CDF84B38C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B3E8783-3D97-4082-B076-FE4CDF84B38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B3E8783-3D97-4082-B076-FE4CDF84B38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B3E8783-3D97-4082-B076-FE4CDF84B38C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03CDB95E-952A-4AF8-BC8E-5DC23C3A1D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
