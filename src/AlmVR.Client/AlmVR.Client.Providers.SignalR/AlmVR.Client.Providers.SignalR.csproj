@@ -228,9 +228,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AlmVR.Common.Models\AlmVR.Common.Models.Full\AlmVR.Common.Models.Full.csproj">
-      <Project>{84BFFB34-7C00-40C2-B843-37069732BF3A}</Project>
-      <Name>AlmVR.Common.Models.Full</Name>
+    <ProjectReference Include="..\..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj">
+      <Project>{719dbb0f-194a-4a82-a26e-18ab3650b66e}</Project>
+      <Name>AlmVR.Common.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\AlmVR.Client.Core\AlmVR.Client.Core.csproj">
       <Project>{320f328d-7826-49b0-83d1-f61546b7546e}</Project>

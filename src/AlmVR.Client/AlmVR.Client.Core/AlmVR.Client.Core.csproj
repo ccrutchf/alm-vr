@@ -48,13 +48,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AlmVR.Common.Models\AlmVR.Common.Models.Full\AlmVR.Common.Models.Full.csproj">
-      <Project>{84BFFB34-7C00-40C2-B843-37069732BF3A}</Project>
-      <Name>AlmVR.Common.Models.Full</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj">
+      <Project>{719dbb0f-194a-4a82-a26e-18ab3650b66e}</Project>
+      <Name>AlmVR.Common.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.2.1.23\build\Nerdbank.GitVersioning.targets')" />

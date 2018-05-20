@@ -1,37 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AlmVR.Common.Models", "AlmVR.Common.Models\AlmVR.Common.Models.shproj", "{04BB357C-92F3-40CC-B74A-09C49CF7B2DD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Common.Models.Full", "AlmVR.Common.Models.Full\AlmVR.Common.Models.Full.csproj", "{84BFFB34-7C00-40C2-B843-37069732BF3A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Common.Models.Standard", "AlmVR.Common.Models.Standard\AlmVR.Common.Models.Standard.csproj", "{33FC831E-AAA5-4BF1-B075-B6DDDE723C91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmVR.Common.Models", "AlmVR.Common.Models\AlmVR.Common.Models.csproj", "{6030716C-5800-431D-BEDD-7C211A0CB5F9}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		AlmVR.Common.Models\AlmVR.Common.Models.projitems*{04bb357c-92f3-40cc-b74a-09c49cf7b2dd}*SharedItemsImports = 13
-		AlmVR.Common.Models\AlmVR.Common.Models.projitems*{84bffb34-7c00-40c2-b843-37069732bf3a}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84BFFB34-7C00-40C2-B843-37069732BF3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33FC831E-AAA5-4BF1-B075-B6DDDE723C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33FC831E-AAA5-4BF1-B075-B6DDDE723C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33FC831E-AAA5-4BF1-B075-B6DDDE723C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33FC831E-AAA5-4BF1-B075-B6DDDE723C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6030716C-5800-431D-BEDD-7C211A0CB5F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6030716C-5800-431D-BEDD-7C211A0CB5F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6030716C-5800-431D-BEDD-7C211A0CB5F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6030716C-5800-431D-BEDD-7C211A0CB5F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2FE6C88A-31F4-4562-9A30-0B1D8722525B}
+		SolutionGuid = {1440A6EA-FA70-4B86-B8CE-A5B1B2B10521}
 	EndGlobalSection
 EndGlobal
