@@ -1,0 +1,70 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": "a0f8352b32dc45381bdfdeb2a81f39eecea63cc8"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "AlmVR.Client.Core/1.0.14-gab9e58c5bb": {
+        "dependencies": {
+          "AlmVR.Common.Models": "1.0.0",
+          "NETStandard.Library": "2.0.3",
+          "Nerdbank.GitVersioning": "2.1.23"
+        },
+        "runtime": {
+          "AlmVR.Client.Core.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Nerdbank.GitVersioning/2.1.23": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "AlmVR.Common.Models/1.0.0": {
+        "dependencies": {
+          "Nerdbank.GitVersioning": "2.1.23"
+        },
+        "runtime": {
+          "AlmVR.Common.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AlmVR.Client.Core/1.0.14-gab9e58c5bb": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Nerdbank.GitVersioning/2.1.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZeOctZXGn1Cerb3FBlTxHpKIxlmbm5HFw5D+mj57b1gA72SUo5LyfEr/G9J0DHO+2DbHyzfonU8z1ubqz4Aw+g==",
+      "path": "nerdbank.gitversioning/2.1.23",
+      "hashPath": "nerdbank.gitversioning.2.1.23.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "AlmVR.Common.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

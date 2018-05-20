@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNetCore.Http.Connections.Client</name>
+    </assembly>
+    <members>
+        <member name="P:Microsoft.AspNetCore.Http.Connections.Client.HttpConnectionOptions.HttpMessageHandlerFactory">
+            <summary>
+            Gets or sets a delegate for wrapping or replacing the <see cref="P:Microsoft.AspNetCore.Http.Connections.Client.HttpConnectionOptions.HttpMessageHandlerFactory"/>
+            that will make HTTP requests the server.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Http.Connections.Client.HttpConnectionOptions.WebSocketConfiguration">
+            <summary>
+            Gets or sets a delegate that will be invoked with the <see cref="T:System.Net.WebSockets.ClientWebSocketOptions"/> object used
+            to configure the WebSocket when using the WebSockets transport.
+            </summary>
+            <remarks>
+            This delegate is invoked after headers from <see cref="P:Microsoft.AspNetCore.Http.Connections.Client.HttpConnectionOptions.Headers"/> and the access token from <see cref="P:Microsoft.AspNetCore.Http.Connections.Client.HttpConnectionOptions.AccessTokenProvider"/>
+            has been applied.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.Tasks.ForceAsyncTaskExtensions.ForceAsync(System.Threading.Tasks.Task)">
+            <summary>
+            Returns an awaitable/awaiter that will ensure the continuation is executed
+            asynchronously on the thread pool, even if the task is already completed
+            by the time the await occurs.  Effectively, it is equivalent to awaiting
+            with ConfigureAwait(false) and then queuing the continuation with Task.Run,
+            but it avoids the extra hop if the continuation already executed asynchronously.
+            </summary>
+        </member>
+    </members>
+</doc>

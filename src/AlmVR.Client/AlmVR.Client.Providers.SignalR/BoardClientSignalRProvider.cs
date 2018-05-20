@@ -1,7 +1,6 @@
 ﻿using AlmVR.Client.Core;
 using AlmVR.Common.Models;
 using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.AspNetCore.Sockets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
