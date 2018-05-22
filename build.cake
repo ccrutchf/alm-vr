@@ -25,32 +25,28 @@ Task("Clean")
     CleanDirectory(buildDir);
 });
 
-Task("Restore-NuGet-Packages")
-    .IsDependentOn("Clean")
-    .Does(() =>
-{
-    NuGetRestore("./src/AlmVR.Client/AlmVR.Client.sln");
-});
-
 Task("Build-Server")
     .IsDependentOn("Clean")
 	.Does(() =>
 {
 	var dotNetCoreSettings = new DotNetCoreBuildSettings
 	{
-		Configuration = "Release"
+		Configuration = configuration
 	};
 	
 	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln", dotNetCoreSettings);
 });
 
 Task("Build-Client")
-    .IsDependentOn("Restore-NuGet-Packages")
+    .IsDependentOn("Clean")
 	.Does(() =>
 {
-	// Build the client.
-	MSBuild("./src/AlmVR.Client/AlmVR.Client.sln", settings =>
-        settings.SetConfiguration(configuration));
+	var dotNetCoreSettings = new DotNetCoreBuildSettings
+	{
+		Configuration = configuration
+	};
+	
+	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln", dotNetCoreSettings);
 });
 
 Task("Build-Unity")
