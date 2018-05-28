@@ -11,14 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Server.Providers.Trel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Server.Provider.FileSystem", "AlmVR.Server.Provider.FileSystem\AlmVR.Server.Provider.FileSystem.csproj", "{16114BDF-422B-4B25-A770-2EBF43AFC844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Common.Models.Standard", "..\AlmVR.Common.Models\AlmVR.Common.Models.Standard\AlmVR.Common.Models.Standard.csproj", "{3E2724E6-A40B-4B08-A6ED-431126F3D7A8}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AlmVR.Common.Models", "..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.shproj", "{04BB357C-92F3-40CC-B74A-09C49CF7B2DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlmVR.Common.Models", "..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.csproj", "{F445EC8D-56B7-4B5B-853B-8F83D241EA71}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\AlmVR.Common.Models\AlmVR.Common.Models\AlmVR.Common.Models.projitems*{04bb357c-92f3-40cc-b74a-09c49cf7b2dd}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -40,10 +35,10 @@ Global
 		{16114BDF-422B-4B25-A770-2EBF43AFC844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16114BDF-422B-4B25-A770-2EBF43AFC844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16114BDF-422B-4B25-A770-2EBF43AFC844}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E2724E6-A40B-4B08-A6ED-431126F3D7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E2724E6-A40B-4B08-A6ED-431126F3D7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E2724E6-A40B-4B08-A6ED-431126F3D7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E2724E6-A40B-4B08-A6ED-431126F3D7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F445EC8D-56B7-4B5B-853B-8F83D241EA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F445EC8D-56B7-4B5B-853B-8F83D241EA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F445EC8D-56B7-4B5B-853B-8F83D241EA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F445EC8D-56B7-4B5B-853B-8F83D241EA71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
