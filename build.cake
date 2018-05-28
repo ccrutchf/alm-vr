@@ -1,4 +1,5 @@
 #addin "Cake.Incubator"
+#addin "Cake.Docker"
 #addin nuget:?package=Cake.Unity3D
 
 //////////////////////////////////////////////////////////////////////
@@ -35,6 +36,39 @@ Task("Build-Server")
 	};
 	
 	DotNetCoreBuild("./src/AlmVR.Server/AlmVR.Server.sln", dotNetCoreSettings);
+});
+
+Task("Publish-Server")
+	.IsDependentOn("Build-Server")
+	.Does(() =>
+{
+     var settings = new DotNetCorePublishSettings
+     {
+         Configuration = "Release",
+         OutputDirectory = "./src/AlmVR.Server/artifacts/"
+     };
+
+     DotNetCorePublish("./src/AlmVR.Server/AlmVR.Server.sln", settings);
+});
+
+Task("Copy-Plugins")
+	.IsDependentOn("Publish-Server")
+	.Does(() =>
+{
+	CreateDirectory("./src/AlmVR.Server/artifacts/Plugins/");
+	CopyFiles("./src/AlmVR.Server/build/Plugins/*", "./src/AlmVR.Server/artifacts/Plugins/");
+});
+
+Task("Docker-Build-Server")
+	.IsDependentOn("Copy-Plugins")
+	.Does(() =>
+{
+	var dockerImageBuildSettings = new DockerImageBuildSettings
+	{
+		Tag = new string[] { "almvr" }
+	};
+
+	DockerBuild(dockerImageBuildSettings, "./src/AlmVR.Server");
 });
 
 Task("Build-Client")
@@ -78,9 +112,9 @@ Task("Build-Unity")
 });
 
 Task("Build")
-	.IsDependentOn("Build-Server")
-	.IsDependentOn("Build-Client")
-	.IsDependentOn("Build-Unity");
+	.IsDependentOn("Docker-Build-Server")
+	.IsDependentOn("Build-Client");
+	//.IsDependentOn("Build-Unity");
 
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS

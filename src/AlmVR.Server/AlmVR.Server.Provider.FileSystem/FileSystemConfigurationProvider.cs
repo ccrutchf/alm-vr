@@ -19,6 +19,12 @@ namespace AlmVR.Server.Provider.FileSystem
 
             configurationDirectory = new DirectoryInfo(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Configuration"));
 
+            // Running in Docker
+            if (File.Exists("/.dockerenv") && Directory.Exists("/data"))
+            {
+                configurationDirectory = new DirectoryInfo("/data");
+            }
+
             if (!configurationDirectory.Exists)
             {
                 configurationDirectory.Create();
