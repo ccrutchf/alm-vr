@@ -1,6 +1,8 @@
-FROM microsoft/dotnet:2.1.0-rc1-aspnetcore-runtime-bionic
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
+WORKDIR /app
+EXPOSE 80
 
 # Copy all of the build
 COPY ./artifacts /app
 
-ENTRYPOINT [ "dotnet", "/app/AlmVR.Server.dll" ]
+ENTRYPOINT [ "dotnet", "AlmVR.Server.dll" ]
